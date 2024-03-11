@@ -25,7 +25,7 @@ export const GhBaseURL = "https://api.github.com/repos/<user>/<repo>/issues"
 ## Github OAuth App
 
 請登入Github後到Settings > Developer Settings > OAuth Apps新增一個App。
-Callback網址請自行設定，若在本地端執行，Next.js預設`PORT=3000`，則callback url為`http://localhost:3000/api/auth/callback/github`，以讓程式Next Auth可以正常運作。
+Callback網址請自行設定，若在本地端執行，Next.js預設`PORT=3000`，則callback url為`http://localhost:3000/api/auth/callback/github`，讓Next Auth可以正常運作。
 
 ## 啟動
 
@@ -59,7 +59,7 @@ pnpm run dev
 
 ## 登入
 
-我使用Next Auth來作為認證的工具。除了新增`GithubProvider`以外，還要再callbacks處修改`jwt`與`session`欄位。再來型別部分，由於`create-t3-app`已經將依些模板定義好了，我只要簡單修改回傳的類別，加入`access_token`欄位，之後新增、編輯、刪除的功能就都可以使用了。
+我使用Next Auth來作為認證的工具。除了新增`GithubProvider`以外，還要再callbacks處修改`jwt`與`session`欄位。再來型別部分，由於`create-t3-app`已經將模板定義好了，我只要簡單修改回傳的類別，加入`access_token`欄位，之後新增、編輯、刪除的功能就都可以使用了。
 
 ## Styling
 
