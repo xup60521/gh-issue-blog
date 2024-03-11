@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { fetchPost } from "~/server_action/fetchPost";
 import type { GithubIssueType, IssueCommentType } from "~/type/github";
 import Popup from "reactjs-popup"
@@ -71,9 +71,9 @@ export default function MainContent({initData, session}: {initData: GithubIssueT
             const d = time.getDate()
 
             return (
-              <>
+              <Fragment key={`card ${item.title}`}>
                 {index !==0 && <div className="border-t-[1px]"  key={`divider ${item.title}`} />}
-                <span key={`card ${item.title}`} onClick={()=>{
+                <span  onClick={()=>{
                   setModalOpen(true)
                   setCurrentViewArticle({...item})
                   window.history.pushState({},"", window.location.pathname+`/${item.number}`)
@@ -85,7 +85,7 @@ export default function MainContent({initData, session}: {initData: GithubIssueT
                   <h2 className="font-bold py-1">{item.title}</h2>
                   <p className=" truncate text-sm">{item.body}</p>
                 </span>
-              </>
+              </Fragment>
           )})}
         </div>
       </div>
