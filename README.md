@@ -2,6 +2,8 @@
 
 Dcard前端實習作業。
 
+Deploy website: https://gh-issue-blog.vercel.app/
+
 # 開始使用
 
 ## env 設定
