@@ -67,6 +67,6 @@ pnpm run dev
 
 ## Markdown Preview
 
-這是自己想要加的，但野花最多的時間。因為TailwindCSS會把所有的html element css重製，所以由markdown渲染出來的html會沒有效果。
+這是自己想要加的，但花最多的時間。因為TailwindCSS會把所有的html element css重製，所以由markdown渲染出來的html會沒有效果。
 
 我使用暴力解，透過下載並匯入Github Markdown的CSS檔案，稍微修改一下背景顏色，並調整className，如此這樣Markdown Preview就能正確顯示了。
