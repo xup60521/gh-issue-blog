@@ -45,7 +45,9 @@ export default function CreatePost({ session }: { session: Session }) {
         Accept: "application/vnd.github+json",
       },
     })
-      .then(() => router.push("/post"))
+      .then(() => {
+        router.push("/post")
+      })
       .catch((err) =>
         toast({
           title: JSON.stringify(err),

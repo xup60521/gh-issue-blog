@@ -20,7 +20,7 @@ export default async function TopBar({ createMode }: { createMode?: boolean }) {
           <FaBlogger />
         </span>
         <Link
-          href={"/"}
+          href={"/post"}
           className="flex-shrink-0 font-mono text-xl font-bold text-white"
         >{`丹尼爾的部落格`}</Link>
         <div className="mx-4 flex h-full flex-shrink items-center py-2">

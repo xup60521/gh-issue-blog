@@ -45,11 +45,11 @@ pnpm run dev
 
 # 架構
 
-整個頁面風格是模仿Dcard的設計。幾乎所有關於fetch、post等非同步事件的操作都是藉由Nextjs 14 Server Action來完成，除了新增、刪除、修改文章以外，因為會需要使用者登入後傳回的access_token，因此就在client端完成。
+整個頁面風格是模仿Dcard的設計。幾乎所有關於fetch、post等非同步事件的操作都是藉由Server Action來完成，除了新增、刪除、修改文章以外，因為會需要使用者登入後傳回的access_token，因此就在client端完成。
 
-## 文章列表&頁面
+## 文章列表頁面
 
-由於使用了React Server Component，進入頁面一開始的資料會從RSC載入，之後Client Compoent `<MainContent >`會偵測頁面的滾動，當滾到底就會觸發事件，fetch下一頁的資料。
+進入頁面一開始的資料會從RSC載入，之後Client Compoent `<MainContent >`裡面會偵測頁面的滾動，當滾到底就會觸發事件，fetch下一頁的資料。
 
 當點入文章後，會顯示浮動的Popup，並透過`window.history.pushState`更新網址，也會觸發fetch comment，這樣子留言就能正常顯示。此時若是重新整理，則會直接顯示`app/post/[id]/page.tsx`的內容，達成類似Dcard頁面Client side navigation的體驗。
 
@@ -63,7 +63,7 @@ pnpm run dev
 
 ## Styling
 
-雖然一直都有些drama，我這裡使用tailwindCSS來做styling。
+這裡使用tailwindCSS來做styling。
 
 ## Markdown Preview
 
